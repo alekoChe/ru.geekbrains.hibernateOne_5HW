@@ -9,7 +9,7 @@ public class SessionFactoryUtils {
 
     public void init(){
         factory = new Configuration()
-                .configure("hibernate.cfg.xml")
+                .configure("hibfernate2.cfg.xml")
                 .buildSessionFactory();
     }
 

@@ -33,11 +33,11 @@ public class ProductDaoImpl implements ProductDao{
     }
 
     @Override
-    public Product findByName(String tittle) {
+    public Product findByName(String title) {
         try (Session session = sessionFactoryUtils.getSession()){
             session.beginTransaction();
-            Product products = session.createQuery("select p from Product p where p.tittle = :tittle", Product.class)
-                    .setParameter("tittle", tittle)
+            Product products = session.createQuery("select p from Product p where p.title = :title", Product.class)
+                    .setParameter("title", title)
                     .getSingleResult();
             session.getTransaction().commit();
             return products;
@@ -54,15 +54,15 @@ public class ProductDaoImpl implements ProductDao{
     }
 
     @Override
-    public void update(Long id, String tittle) {
-        //            session.createQuery("update Product p set p.tittle :tittle where p.id = :id")
-        //                    .setParameter("tittle", tittle)
+    public void update(Long id, String title) {
+        //            session.createQuery("update Product p set p.title :title where p.id = :id")
+        //                    .setParameter("title", title)
         //                    .setParameter("id", id)
         //                    .executeUpdate();
         try (Session session = sessionFactoryUtils.getSession()){
             session.beginTransaction();
             Product product = session.get(Product.class, id);
-            product.setTitle(tittle);
+            product.setTitle(title);
             session.getTransaction().commit();
         }
     }
