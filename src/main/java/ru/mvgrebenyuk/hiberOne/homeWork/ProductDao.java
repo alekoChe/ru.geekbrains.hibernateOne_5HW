@@ -12,7 +12,7 @@ public interface ProductDao {
 
     void save(Product product);
 
-    void update(Long id, String tittle);
+    void update(Long id, String title);
 
     void testCache();
 

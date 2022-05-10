@@ -21,7 +21,7 @@ public class Product {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String tittle) {
         this.title = title;
     }
 
@@ -46,6 +46,7 @@ public class Product {
         this.id = id;
         this.cost = cost;
     }
+    public Product() {}
 
     @Override
     public String toString() {
